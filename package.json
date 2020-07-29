@@ -1,0 +1,18 @@
+{
+  "name": "dotfiles",
+  "version": "1.0.0",
+  "description": "my dotfiles",
+
+  "main": "setup.sh",
+  "scripts": {
+    "init": "chmod +x *.sh */*.sh",
+    "setup": "bash setup.sh",
+    "test": "bash test/test.sh --prefix ./test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://codebase.local/dev/dotfiles.git"
+  },
+  "author": "vance",
+  "license": "MIT"
+}
