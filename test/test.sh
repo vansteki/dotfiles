@@ -65,7 +65,11 @@ function update() {
     find $sourceDir -type d -name "$file" -exec cp -r {} $destDir \;
   done
 
-  #  echo $filesToCommitWithPath | tr " " "\n" | xargs echo $destDir/
+  echo ---
+  echo update to repo via git:
+  cd $destDir
+  git add --dry-run -u
+  git commit --dry-run -m "test"
 }
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
