@@ -17,6 +17,7 @@ fileCount=0
 
 function cleanTestFiles() {
   rm $destDir/.*
+  rm /usr/local/opt/dotfiles
 }
 
 function countFiles() {
@@ -33,6 +34,18 @@ function deployDotfiles() {
 }
 
 function setup() {
+  echo 'setup'
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    ln -s ./dotfiles /usr/local/opt/dotfiles
+  elif [[ "$OSTYPE" == "win64" ]]; then
+    echo setup for linux windows
+  elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    echo setup for linux
+  fi
+  echo "usage: use 'dotfiles update' to update your dotfiles"
+}
+
+function deploy() {
   sourceDir="$PWD/macos"
   destDir="$PWD/userhome"
   fileCount=$(countFiles $sourceDir)
@@ -74,8 +87,10 @@ function update() {
 }
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  #  setup
-  update
+  setup
+#  deploy
+#  update
+#  cleanTestFiles $destDir
 elif [[ "$OSTYPE" == "win64" ]]; then
   sourceDir='./windows'
 
