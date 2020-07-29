@@ -24,14 +24,12 @@ function countFiles() {
   echo $(ls -1A $src | wc -l)
 }
 
-function findThenCopyTo() {
+function deployDotfiles() {
   local src=$1
   local dest=$2
-  [[ $3 = '' ]] && local fileNamePattern=".*" || local fileNamePattern=$3
   echo files or folders to copy:
   find $src -type f
-  echo $filesToCopy
-  cp -r test_macos/ test_userhome/
+  cp -r $src/ $dest/
 }
 
 function setup() {
@@ -39,7 +37,7 @@ function setup() {
   destDir="$PWD/test_userhome"
   fileCount=$(countFiles $sourceDir)
   echo "copy $fileCount files from $sourceDir to $destDir"
-  findThenCopyTo $sourceDir $destDir
+  deployDotfiles $sourceDir $destDir
 }
 
 function update() {
@@ -50,15 +48,14 @@ function update() {
   echo destDir $destDir
   echo ---
 
-  commitFileList=$(find $destDir -type f -name "*" -exec basename {} \;)
-  echo $commitFileList | tr " " "\n" | xargs -I file echo ~/file
-#  | xargs -J file echo $sourceDir/file
-#  echo files to update:
-#  echo $commitFileList
+  filesToCommit=$(find $destDir -type f -name "*" -exec basename {} \;)
+  filesToCommitWithPath=$(echo $filesToCommit | tr " " "\n" | xargs -I file find . -name "file" )
+  echo $filesToCommitWithPath | tr " " "\n" | xargs -I file cp file $destDir
 }
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   setup
+#  update
 elif [[ "$OSTYPE" == "win64" ]]; then
   sourceDir='./test_windows'
 
