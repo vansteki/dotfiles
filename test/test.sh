@@ -9,9 +9,9 @@ echo HOME: $HOME
 echo PWD: $PWD
 ps -p $$
 
-echo ------
+echo ---
 
-sourceDir="$PWD/test_macos"
+sourceDir="$PWD/macos"
 destDir=""
 fileCount=0
 
@@ -33,31 +33,46 @@ function deployDotfiles() {
 }
 
 function setup() {
-  sourceDir="$PWD/test_macos"
-  destDir="$PWD/test_userhome"
+  sourceDir="$PWD/macos"
+  destDir="$PWD/userhome"
   fileCount=$(countFiles $sourceDir)
   echo "copy $fileCount files from $sourceDir to $destDir"
   deployDotfiles $sourceDir $destDir
 }
 
 function update() {
-  sourceDir="$PWD/test_userhome"
-  destDir="$PWD/test_macos"
+  sourceDir="$PWD/userhome"
+  destDir="$PWD/macos"
 
   echo sourceDir $sourceDir
   echo destDir $destDir
   echo ---
+  echo files to update:
 
-  filesToCommit=$(find $destDir -type f -name "*" -exec basename {} \;)
-  filesToCommitWithPath=$(echo $filesToCommit | tr " " "\n" | xargs -I file find . -name "file" )
-  echo $filesToCommitWithPath | tr " " "\n" | xargs -I file cp file $destDir
+  filesToCommit=$(find $destDir -maxdepth 1 -type f -name "*" -exec basename {} \;)
+  echo $filesToCommit
+  for file in $filesToCommit; do
+    find $sourceDir -type f -name "$file"
+    find $sourceDir -type f -name "$file" -exec cp -r {} $destDir \;
+  done
+
+  echo ---
+
+  filesWithFolderToCommit=$(find $destDir -type d -name ".*" -exec basename {} \;)
+  echo $filesWithFolderToCommit
+  for file in $filesWithFolderToCommit; do
+    find $sourceDir -type d -name "$file"
+    find $sourceDir -type d -name "$file" -exec cp -r {} $destDir \;
+  done
+
+  #  echo $filesToCommitWithPath | tr " " "\n" | xargs echo $destDir/
 }
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  setup
-#  update
+  #  setup
+  update
 elif [[ "$OSTYPE" == "win64" ]]; then
-  sourceDir='./test_windows'
+  sourceDir='./windows'
 
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   echo "Linux!"
@@ -66,6 +81,3 @@ fi
 #cleanTestFiles
 
 # udpate dotfiles
-
-
-
