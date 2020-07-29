@@ -1,34 +1,50 @@
 #!/usr/bin/env bash
 
-#set -x
-#w
+#set -x#w
 
 cd "$PWD/test" || exit
 
-echo OS: $OSTYPE
+echo OSTYPE: $OSTYPE
 echo HOME: $HOME
 echo PWD: $PWD
+ps -p $$
+
 echo ------
 
 sourceDir="$PWD/test_macos"
 destDir=""
 fileCount=0
 
+function cleanTestFiles() {
+  rm $destDir/.*
+}
+
+function countFiles() {
+  local src=$1
+  echo $(ls -1A $src | wc -l)
+}
+
+function findThenCopyTo() {
+  local src=$1
+  local dest=$2
+  [[ $3 = '' ]] && local fileNamePattern=".*" || local fileNamePattern=$3
+  find $src -type f -name "$fileNamePattern" | xargs -J file cp file $dest
+}
+
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  echo "Apple!"
   sourceDir="$PWD/test_macos"
-  fileCount=$(ls -1A $sourceDir | wc -l)
+  destDir="$PWD/test_userhome"
+  fileCount=$(countFiles $sourceDir)
   echo "copy $fileCount files from $sourceDir to $destDir"
-  find "$sourceDir -type f -name '.*' | xargs -J file cp file $destDir"
+  findThenCopyTo $sourceDir $destDir
 
 elif [[ "$OSTYPE" == "win64" ]]; then
   sourceDir='./test_windows'
-  fileCount=$(ls -1A $sourceDir | wc -l)
-  echo "copy $fileCount files from $sourceDir to $destDir"
-  find "$sourceDir -type f -name '.*' | xargs -J file cp file $destDir"
 
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   echo "Linux!"
 fi
 
+#cleanTestFiles
 
