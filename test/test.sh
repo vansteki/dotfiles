@@ -67,9 +67,9 @@ function update() {
 
   echo ---
   echo update to repo via git:
-  cd $destDir
-  git add --dry-run -u
-  git commit --dry-run -m "test"
+  cd $destDir || exit
+  git add -u
+  git commit -m "update dotfiles"
 }
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -81,7 +81,3 @@ elif [[ "$OSTYPE" == "win64" ]]; then
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   echo "Linux!"
 fi
-
-#cleanTestFiles
-
-# udpate dotfiles
