@@ -70,6 +70,7 @@ function update() {
   cd $destDir || exit
   git add -u
   git commit -m "update dotfiles"
+  git push origin master
 }
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
