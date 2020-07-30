@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/usr/bin/.env bash
 
 cd "$PWD/test" || echo 'no need to change working directory'
 
-source ./env.sh
+source ./env
 source ./common.sh
 
 echo ---

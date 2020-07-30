@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/.env bash
 
 function cleanTestFiles() {
   rm -rf $PWD/userhome/.* $PWD/userhome/*.yml || exit 0
