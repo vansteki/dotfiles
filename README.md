@@ -2,23 +2,13 @@
 
 my env files
 
-it should have:
-
-1.some dotfiles for configs & envs
-
-2.a setup script
-
-3.folders for different OS
-
-4.some handy daily development & test for scratches
-
 # Requirements
 
 1. Node.js & npm
 
 # Usage
  
-1. put or copy all your dotfiles into `dotfiles` folder
+1. put or copy all your dotfiles into `dotfiles/macos/` folder
 
 2. install this helper tool
     ```
