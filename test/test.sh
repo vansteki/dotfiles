@@ -2,19 +2,14 @@
 
 cd "$PWD/test" || echo 'no need to change working directory'
 
-echo OSTYPE: $OSTYPE
-echo HOME: $HOME
-echo PWD: $PWD
-ps -p $$
+source ./env.sh
 
 echo ---
 
-sourceDir="$PWD/macos"
-destDir=""
 fileCount=0
 
 function cleanTestFiles() {
-  rm -rf $PWD/userhome//*.*
+  rm -rf $PWD/userhome/.* $PWD/userhome/*.yml || exit 0
 }
 
 function countFiles() {
@@ -55,14 +50,6 @@ function setup() {
     echo setup for linux
   fi
   echo "usage: use 'dotfiles update' to update your dotfiles"
-}
-
-function deployDotfiles() {
-  local src=$1
-  local dest=$2
-  echo files or folders to copy:
-  find $src -type f
-  cp -r $src/ $dest/
 }
 
 function deploy() {
@@ -110,10 +97,17 @@ function update() {
   git push origin master
 }
 
+function testDeploy() {
+    deploy $sourceDir $destDir
+    echo "deploy done, clean dotfiles:"
+    find $destDir -type f -name "*"
+    cleanTestFiles
+}
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
   #  setup
-#  deploy
-  update && ls -al ./userhome && cleanTestFiles
+  testDeploy
+#  update
 #  cleanTestFiles $destDir
 elif [[ "$OSTYPE" == "win64" ]]; then
   sourceDir='./windows'
