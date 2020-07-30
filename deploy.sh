@@ -1,7 +1,9 @@
 #!/usr/bin/.env bash
 
-source ./env.sh
-source ./common.sh
+set -x
+
+source $PWD/.env
+source $PWD/common.sh
 
 function deploy() {
   local src=$1
@@ -16,12 +18,13 @@ function deploy() {
 }
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  sourceDir="./macos"
+  sourceDir="$PWD/macos"
   destDir="$HOME"
   deploy $sourceDir $destDir
+  echo ---
   echo "file deployed:"
   find $sourceDir -type f | xargs -I file basename file
-
+  echo ---
 elif [[ "$OSTYPE" == "win64" ]]; then
   sourceDir='./windows'
 

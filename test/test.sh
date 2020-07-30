@@ -88,17 +88,17 @@ function update() {
 }
 
 function testDeploy() {
-    deploy $sourceDir $destDir
-    echo "deploy done, clean dotfiles:"
-    find $destDir -type f -name "*"
-    cleanTestFiles
+  deploy $sourceDir $destDir
+  echo "deploy done, clean dotfiles:"
+  find $destDir -type f -name "*"
+  cleanTestFiles
 }
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   sourceDir="$PWD/macos"
   destDir="$PWD/userhome"
-  #  setup
-  testDeploy
+  setup
+#  testDeploy
 #  update
 #  cleanTestFiles $destDir
 elif [[ "$OSTYPE" == "win64" ]]; then
