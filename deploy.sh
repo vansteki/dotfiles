@@ -15,7 +15,16 @@ function deploy() {
   cp -r $src/ $dest/
 }
 
-deploy $sourceDir $destDir
-echo "file deployed:"
-find $sourceDir -type f | xargs -I file basename file
-#xargs -I file find $destDir -maxdepth 1 -name "file"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  sourceDir="./macos"
+  destDir="$HOME"
+  deploy $sourceDir $destDir
+  echo "file deployed:"
+  find $sourceDir -type f | xargs -I file basename file
+
+elif [[ "$OSTYPE" == "win64" ]]; then
+  sourceDir='./windows'
+
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  echo "Linux!"
+fi
