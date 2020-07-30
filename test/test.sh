@@ -66,7 +66,6 @@ function deployDotfiles() {
 }
 
 function deploy() {
-  set -x
   local src=$1
   local dest=$2
   [ -z $src ] && src="$PWD/macos" || src=$1
@@ -114,7 +113,7 @@ function update() {
 if [[ "$OSTYPE" == "darwin"* ]]; then
   #  setup
 #  deploy
-  update
+  update && ls -al ./userhome && cleanTestFiles
 #  cleanTestFiles $destDir
 elif [[ "$OSTYPE" == "win64" ]]; then
   sourceDir='./windows'
