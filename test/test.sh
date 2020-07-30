@@ -14,7 +14,7 @@ destDir=""
 fileCount=0
 
 function cleanTestFiles() {
-  rm -rf $PWD/userhome/.*
+  rm -rf $PWD/userhome//*.*
 }
 
 function countFiles() {
