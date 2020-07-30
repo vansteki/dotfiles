@@ -7,7 +7,7 @@ function update() {
   echo ---
   echo files to update:
 
-  filesToCommit=$(find $destDir -maxdepth 1 -type f -name "*" -exec basename {} \;)
+  filesToCommit=$(find $destDir -maxdepth 0 -type f -name "*" -exec basename {} \;)
   echo $filesToCommit
   for file in $filesToCommit; do
     find $sourceDir -type f -name "$file"
