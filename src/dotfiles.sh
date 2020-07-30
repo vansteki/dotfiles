@@ -2,9 +2,11 @@
 
 # use "dirname $0" to get origin dir of symbolic file
 PWD=$(dirname $0)
-source $PWD/common.sh
+DOTFILES_DIR=${PWD%/*}/dotfiles/macos
+
 source $PWD/update.sh
 
 echo ---
 echo "update dotfiles..."
-update
+
+update $HOME $DOTFILES_DIR

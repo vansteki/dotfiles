@@ -1,6 +1,6 @@
 function update() {
-  sourceDir="$HOME"
-  destDir="$PWD/dotfiles/macos"
+  sourceDir=$1
+  destDir=$2
 
   echo sourceDir $sourceDir
   echo destDir $destDir

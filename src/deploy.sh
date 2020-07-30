@@ -1,8 +1,5 @@
 #!/usr/bin/.env bash
 
-#source $PWD/src/.env
-#source $PWD/src/common.sh
-
 function deploy() {
   local src=$1
   local dest=$2
