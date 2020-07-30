@@ -5,7 +5,7 @@
 
   "main": "setupcmd.sh",
   "scripts": {
-    "init": "chmod +x *.sh */*.sh",
+    "init": "cp ./template.env ./.env; chmod +x *.sh */*.sh",
     "deploy": "bash deploy.sh",
     "setup": "npm run init && npm run deploy && bash setupcmd.sh",
     "test": "bash test/test.sh --prefix ./test/"
