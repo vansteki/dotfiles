@@ -3,4 +3,8 @@
 # use "dirname $0" to get origin dir of symbolic file
 PWD=$(dirname $0)
 source $PWD/common.sh
-echo "dotfiles!"
+source $PWD/update.sh
+
+echo ---
+echo "update dotfiles..."
+
