@@ -3,19 +3,9 @@
 cd "$PWD/test" || echo 'no need to change working directory'
 
 source ./env.sh
+source ./common.sh
 
 echo ---
-
-fileCount=0
-
-function cleanTestFiles() {
-  rm -rf $PWD/userhome/.* $PWD/userhome/*.yml || exit 0
-}
-
-function countFiles() {
-  local src=$1
-  echo $(ls -1A $src | wc -l)
-}
 
 # void, stringToFind, fileToGrep
 function testIfStringExistInFile() {

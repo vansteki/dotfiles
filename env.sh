@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
+ps -p $$
 echo OSTYPE: $OSTYPE
 echo HOME: $HOME
 echo PWD: $PWD
-ps -p $$
+PWD=$(dirname $0)
+echo ORIGIN PATH: $PWD
+
 sourceDir="$PWD/macos"
 destDir="$HOME"
 echo sourceDir: $sourceDir
