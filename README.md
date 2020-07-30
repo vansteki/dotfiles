@@ -15,7 +15,6 @@ it should have:
 # Requirements
 
 1. Node.js & npm
-2. Git Bash (Windows)
 
 # Usage
  
