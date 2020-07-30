@@ -7,20 +7,20 @@ function update() {
   echo ---
   echo files to update:
 
-  filesToCommit=$(find $destDir -maxdepth 0 -type f -name "*" -exec basename {} \;)
+  filesToCommit=$(find $destDir -maxdepth 1 -type f -name "*" -exec basename {} \;)
   echo $filesToCommit
   for file in $filesToCommit; do
-    find $sourceDir -type f -name "$file"
-    find $sourceDir -type f -name "$file" -exec cp -r {} $destDir \;
+    find $sourceDir -maxdepth 1 -type f -name "$file"
+    find $sourceDir -maxdepth 1 -type f -name "$file" -exec cp -r {} $destDir \;
   done
 
   echo ---
-
-  filesWithFolderToCommit=$(find $destDir -type d -name ".*" -exec basename {} \;)
+  echo folders to update:
+  filesWithFolderToCommit=$(find $destDir -maxdepth 1 -type d -name ".*" -exec basename {} \;)
   echo $filesWithFolderToCommit
   for file in $filesWithFolderToCommit; do
-    find $sourceDir -type d -name "$file"
-    find $sourceDir -type d -name "$file" -exec cp -r {} $destDir \;
+    find $sourceDir -maxdepth 1 -type d -name "$file"
+    find $sourceDir -maxdepth 1 -type d -name "$file" -exec cp -r {} $destDir \;
   done
 
   echo ---
