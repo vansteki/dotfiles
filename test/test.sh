@@ -2,7 +2,7 @@
 
 #set -x
 
-cd "$PWD/test" || exit
+cd "$PWD/test" || echo 'no need to change working directory'
 
 echo OSTYPE: $OSTYPE
 echo HOME: $HOME
