@@ -55,8 +55,8 @@ function setup() {
 function deploy() {
   local src=$1
   local dest=$2
-  [ -z $src ] && src="$PWD/macos" || src=$1
-  [ -z $dest ] && dest="$PWD/userhome" || dest=$2
+  [ -z $src ] && echo "no source dir" && exit 1
+  [ -z $dest ] && echo "no source dir" && exit 1
   fileCount=$(countFiles $dest)
   echo "copy $fileCount files from $src to $dest"
   echo files or folders to copy:
@@ -105,6 +105,8 @@ function testDeploy() {
 }
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
+  sourceDir="$PWD/macos"
+  destDir="$PWD/userhome"
   #  setup
   testDeploy
 #  update
