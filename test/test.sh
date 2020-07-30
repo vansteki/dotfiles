@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-#set -x
-
 cd "$PWD/test" || echo 'no need to change working directory'
 
 echo OSTYPE: $OSTYPE
@@ -16,21 +14,12 @@ destDir=""
 fileCount=0
 
 function cleanTestFiles() {
-  rm -rf $destDir/.*
-  rm -rf ~/.mockfile .mockfile bar foo
+  rm -rf $PWD/userhome/.*
 }
 
 function countFiles() {
   local src=$1
   echo $(ls -1A $src | wc -l)
-}
-
-function deployDotfiles() {
-  local src=$1
-  local dest=$2
-  echo files or folders to copy:
-  find $src -type f
-  cp -r $src/ $dest/
 }
 
 # void, stringToFind, fileToGrep
@@ -68,12 +57,25 @@ function setup() {
   echo "usage: use 'dotfiles update' to update your dotfiles"
 }
 
+function deployDotfiles() {
+  local src=$1
+  local dest=$2
+  echo files or folders to copy:
+  find $src -type f
+  cp -r $src/ $dest/
+}
+
 function deploy() {
-  sourceDir="$PWD/macos"
-  destDir="$PWD/userhome"
-  fileCount=$(countFiles $sourceDir)
-  echo "copy $fileCount files from $sourceDir to $destDir"
-  deployDotfiles $sourceDir $destDir
+  set -x
+  local src=$1
+  local dest=$2
+  [ -z $src ] && src="$PWD/macos" || src=$1
+  [ -z $dest ] && dest="$PWD/userhome" || dest=$2
+  fileCount=$(countFiles $dest)
+  echo "copy $fileCount files from $src to $dest"
+  echo files or folders to copy:
+  find $src -type f
+  cp -r $src/ $dest/
 }
 
 function update() {
@@ -110,9 +112,9 @@ function update() {
 }
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  setup
+  #  setup
 #  deploy
-#  update
+  update
 #  cleanTestFiles $destDir
 elif [[ "$OSTYPE" == "win64" ]]; then
   sourceDir='./windows'
