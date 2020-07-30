@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "my dotfiles",
 
-  "main": "setupcmd.sh",
+  "main": "src/setupcmd.sh",
   "scripts": {
-    "init": "cp ./template.env ./.env; chmod +x *.sh */*.sh",
-    "deploy": "bash deploy.sh",
-    "setup": "npm run init && npm run deploy && bash setupcmd.sh",
+    "init": "cp src/template.env ./.env; chmod +x *.sh */*.sh",
+    "deploy": "bash src/deploy.sh",
+    "setup": "npm run init && npm run deploy && bash src/setupcmd.sh",
     "test": "bash test/test.sh --prefix ./test/"
   },
   "repository": {

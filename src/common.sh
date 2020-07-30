@@ -16,7 +16,7 @@ echo PWD: $PWD
 PWD=$(dirname $0)
 echo ORIGIN PATH: $PWD
 
-sourceDir="$PWD/macos"
+sourceDir="..$PWD/dotfiles/macos"
 destDir="$HOME"
 echo sourceDir: $sourceDir
 echo destDir: $destDir

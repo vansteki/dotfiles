@@ -16,7 +16,6 @@ function deploy() {
 }
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  sourceDir="$PWD/macos"
   destDir="$HOME"
   deploy $sourceDir $destDir
   echo ---
