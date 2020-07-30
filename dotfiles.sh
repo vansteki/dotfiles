@@ -7,4 +7,4 @@ source $PWD/update.sh
 
 echo ---
 echo "update dotfiles..."
-
+update
