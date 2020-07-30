@@ -4,7 +4,7 @@ function setup() {
   echo 'setup'
   if [[ "$OSTYPE" == "darwin"* ]]; then
     printf "\n# My dotfiles helper\n" >>~/.zshrc
-    echo alias dotfiles=\"bash $(pwd)/dotfiles.sh\" >>~/.zshrc
+    echo alias dotfiles=\"bash $(pwd)/src/dotfiles.sh\" >>~/.zshrc
     result=$(cat ~/.zshrc | grep -c dotfiles.sh)
 
     if [[ $result -ge 0 ]]; then
