@@ -17,7 +17,6 @@ fileCount=0
 
 function cleanTestFiles() {
   rm $destDir/.*
-  rm /usr/local/opt/dotfiles
 }
 
 function countFiles() {
@@ -33,12 +32,35 @@ function deployDotfiles() {
   cp -r $src/ $dest/
 }
 
+# void, stringToFind, fileToGrep
+function testIfStringExistInFile() {
+  echo "test if string exists in a file"
+  echo ---
+  local stringToFind=$1
+  local fileToGrep=$2
+  local result=0
+  result=$(cat $stringToFind | grep -c $fileToGrep)
+  if [[ $result -ge 0 ]]; then
+    echo "found $stringToFind in $fileToGrep:"
+    cat $stringToFind | grep $fileToGrep
+  fi
+}
+
 function setup() {
   echo 'setup'
   if [[ "$OSTYPE" == "darwin"* ]]; then
-    ln -s ./dotfiles /usr/local/opt/dotfiles
+    printf "\n# My dotfiles helper\n" >>~/.zshrc
+    echo alias dotfiles=\"bash $(pwd)/dotfiles.sh\" >>~/.zshrc
+    result=$(cat ~/.zshrc | grep -c dotfiles.sh)
+
+    if [[ $result -ge 0 ]]; then
+      echo 'dotfiles alias in ~/.zshrc founded:'
+      cat ~/.zshrc | grep dotfiles.sh
+    fi
+
   elif [[ "$OSTYPE" == "win64" ]]; then
     echo setup for linux windows
+
   elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     echo setup for linux
   fi

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/zsh
 
 echo OSTYPE: $OSTYPE
 echo HOME: $HOME
