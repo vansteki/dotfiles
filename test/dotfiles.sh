@@ -32,9 +32,9 @@ function update() {
   echo ---
   echo update to repo via git:
   cd $destDir || exit
-  git add -u
-  git commit -m "update dotfiles"
-  git push origin master
+  git add --dry-run -u
+  git commit --dry-run -m "update dotfiles"
+  git push --dry-run origin master
 }
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
