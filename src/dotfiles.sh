@@ -5,8 +5,6 @@ PWD=$(dirname $0)
 DOTFILES_DIR=${PWD%/*}/dotfiles/macos
 
 source $PWD/update.sh
-
 echo ---
 echo "update dotfiles..."
-
 update $HOME $DOTFILES_DIR
