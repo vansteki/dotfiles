@@ -18,19 +18,16 @@ it should have:
 2. Git Bash (Windows)
 
 # Usage
-
-1. install
  
-2. put all your dotfiles into `dotfiles` folder
+1. put or copy all your dotfiles into `dotfiles` folder
 
-3. install this helper tool
+2. install this helper tool
+    ```
+    npm run setup
+    ```
 
-```
-npm run setup
-```
+3. Every time when you modified any dotfiles in your user home folder, just use `dotfiles` command, it will automatically commit and push your dotfiles to remote repo for you. 
+    ```
+    dotfiles
+    ```
 
-4. Every time when you modified any dotfiles at your user home folder, just use `dotfiles` command, it will auto commit and push your dotfiles to remote repo for you. 
-
-```
-dotfiles
-```
