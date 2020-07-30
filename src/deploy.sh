@@ -10,16 +10,9 @@ function deploy() {
   cp -r $src/ $dest/
 }
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  destDir="$HOME"
-  deploy $PWD/dotfiles/macos $destDir
-  echo ---
-  echo "file deployed:"
-  find $PWD/dotfiles/macos -type f | xargs -I file basename file
-  echo ---
-elif [[ "$OSTYPE" == "win64" ]]; then
-  echo "Windows!"
-
-elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  echo "Linux!"
-fi
+destDir="$HOME"
+deploy $PWD/dotfiles/macos $destDir
+echo ---
+echo "file deployed:"
+find $PWD/dotfiles/macos -type f | xargs -I file basename file
+echo ---
