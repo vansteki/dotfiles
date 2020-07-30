@@ -6,7 +6,7 @@
   "main": "setup.sh",
   "scripts": {
     "init": "chmod +x *.sh */*.sh",
-    "setup": "bash setup.sh",
+    "setup": "npm run init && bash setup.sh",
     "test": "bash test/test.sh --prefix ./test/"
   },
   "repository": {
