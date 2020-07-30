@@ -19,14 +19,18 @@ it should have:
 
 # Usage
 
-If you are first time to use this tool, execute this command
+1. install
+ 
+2. put all your dotfiles into `dotfiles` folder
 
-```
-npm run init
-```
-
-Copy dotfiles and scratches to user home directory
+3. install this helper tool
 
 ```
 npm run setup
+```
+
+4. Every time when you modified any dotfiles at your user home folder, just use `dotfiles` command, it will auto commit and push your dotfiles to remote repo for you. 
+
+```
+dotfiles
 ```
