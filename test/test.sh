@@ -17,6 +17,7 @@ fileCount=0
 
 function cleanTestFiles() {
   rm -rf $destDir/.*
+  rm -rf ~/.mockfile .mockfile bar foo
 }
 
 function countFiles() {
