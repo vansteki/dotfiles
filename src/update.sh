@@ -1,6 +1,7 @@
 function update() {
   sourceDir=$1
   destDir=$2
+  mode=$3
 
   echo sourceDir $sourceDir
   echo destDir $destDir
@@ -24,9 +25,17 @@ function update() {
   done
 
   echo ---
-  echo update to repo via git:
-  cd $destDir || exit
-  git add -u
-  git commit -m "update dotfiles"
-  git push origin master
+  if [[ $mode != "--dry-run" ]]; then
+    echo update to repo via git:
+    cd $destDir || exit
+    git add -u
+    git commit -m "update dotfiles"
+    git push origin master
+  else
+    echo dry-run update to repo via git:
+    cd $destDir || exit
+    git add -u --dry-run
+    git commit -m "update dotfiles" --dry-run
+    git push origin master --dry-run
+fi
 }
