@@ -14,5 +14,5 @@ else
   echo ---
   echo "dry run mode: update dotfiles, use dotfiles save to save result to remote repository"
   echo ---
-  update $HOME $DOTFILES_DIR "dry"
+  update $HOME $DOTFILES_DIR "--dry-run"
 fi
