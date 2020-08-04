@@ -1,6 +1,7 @@
-# dotfiles
+# Vansteki's dotfiles
+---
 
-my env files
+My dotfiles and automation for lazy people
 
 # Requirements
 
@@ -8,9 +9,9 @@ my env files
 
 # Usage
  
-1. put or copy all your dotfiles into `dotfiles/macos/` folder.
+1. Put or copy all your dotfiles into `dotfiles/macos/` folder.
 
-2. install this helper tool.
+2. Install this helper tool.
     ```
     npm run setup
     ```
