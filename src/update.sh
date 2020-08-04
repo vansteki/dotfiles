@@ -37,5 +37,5 @@ function update() {
     git add -u --dry-run
     git commit -m "update dotfiles" --dry-run
     git push origin master --dry-run
-fi
+  fi
 }
