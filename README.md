@@ -15,10 +15,12 @@ my env files
     npm run setup
     ```
 
-3. Every time when you modified any dotfiles in your user home folder, just use `dotfiles` command to update your dotfiles to remote repository. 
+3. Every time when you modified any dotfiles in your user home folder, just use `dotfiles save` command to update your dotfiles to remote repository. 
    By default, `dotfiles` will execute in dry-run mode, you can check result before updating dotfiles.
-    ``` 
-    dotfiles # just dry-run
-   
-    dotfiles save # update to remote repository
+    ```
+    # dry-run
+    dotfiles 
+    
+    # update to remote repository
+    dotfiles save
     ``` 
