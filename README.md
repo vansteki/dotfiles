@@ -17,11 +17,19 @@ My dotfiles and automation for lazy people
     ```
 
 3. Every time when you modified any dotfiles in your user home folder, just use `dotfiles save` command to update your dotfiles to remote repository. 
-   By default, `dotfiles` will execute in dry-run mode, you can check result before updating dotfiles.
-    ```
-    # dry-run
-    dotfiles 
+   By default, `dotfiles` will execute in `dry-run mode`, you can check result before updating dotfiles.
     
-    # update to remote repository
-    dotfiles save
+    default dry-run mode 
+    ```
+    dotfiles
     ``` 
+    
+    push to remote repository
+    ```
+    dotfiles push
+    ```
+   
+    push to all remote repositories
+    ```
+    dotfiles push --all
+    ```
