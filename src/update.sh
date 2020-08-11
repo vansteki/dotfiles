@@ -30,7 +30,7 @@ function update() {
       echo push to all remote repos
       cd $destDir || exit
       git add -u
-      git commit -m "update dotfiles"
+      git commit -m "update dotfiles to all remote repos"
       git remote | xargs -L1 git push
     else
       echo update to repo via git:
