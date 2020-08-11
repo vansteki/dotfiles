@@ -5,7 +5,7 @@ PWD=$(dirname $0)
 DOTFILES_DIR=${PWD%/*}/dotfiles/macos
 
 source $PWD/update.sh
-if [[ $1 == "save" ]]; then
+if [[ $1 == "push" ]]; then
   echo ---
   echo "update dotfiles..."
   echo ---

@@ -26,11 +26,19 @@ function update() {
 
   echo ---
   if [[ $mode != "--dry-run" ]]; then
-    echo update to repo via git:
-    cd $destDir || exit
-    git add -u
-    git commit -m "update dotfiles"
-    git push origin master
+    if [[ $mode == "--all" ]]; then
+      echo push to all remote repos
+      cd $destDir || exit
+      git add -u
+      git commit -m "update dotfiles"
+      git remote | xargs -L1 git push
+    else
+      echo update to repo via git:
+      cd $destDir || exit
+      git add -u
+      git commit -m "update dotfiles"
+      git push origin master
+    fi
   else
     echo dry-run update to repo via git:
     cd $destDir || exit
