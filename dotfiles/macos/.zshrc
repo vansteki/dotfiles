@@ -143,7 +143,6 @@ alias l='ls -alh'
 alias vihost='vim /etc/hosts'
 alias vrc='vim ~/.zshrc'
 alias src='source ~/.zshrc'
-alias gh='cd ~/Repos/Github/'
 alias nrd="npm run dev"
 
 # GIT
