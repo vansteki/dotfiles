@@ -12,7 +12,9 @@ if [[ $1 == "push" ]]; then
   update $HOME $DOTFILES_DIR
 else
   echo ---
-  echo "dry run mode: update dotfiles, use dotfiles save to save result to remote repository"
+  echo "dry run mode: update dotfiles, use `dotfiles push` to push  result to remote repository"
+  echo "or"
+  echo "`dotfiles push --all` to push to all remote repos"
   echo ---
   update $HOME $DOTFILES_DIR "--dry-run"
 fi
