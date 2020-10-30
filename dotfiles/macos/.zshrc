@@ -129,8 +129,13 @@ export PATH=/Users/$USER/Library/Android/sdk/platform-tools:$PATH
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  i
+# This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && 
+
+
+# This loads nvm bash_completion
+#. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  
 
 # Flutter
 export PATH="$PATH:/Users/vance/Repos/Github/flutter/bin"
@@ -139,6 +144,8 @@ export PATH="$PATH:/Users/vance/Repos/Github/flutter/bin"
 # My Alias
 #
 
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
 alias l='ls -alh'
 alias vihost='vim /etc/hosts'
 alias vrc='vim ~/.zshrc'
@@ -158,6 +165,14 @@ alias pusher="zsh /Users/vance/Repos/Codebase/pusher/app.zsh"
 
 # MAMP MySQL
 alias mamp-mysql="/Applications/MAMP/Library/bin/mysql -u root -p"
+alias mamp-php="/Applications/MAMP/bin/php/php7.3.9/bin"
 
 # My dotfiles helper
 alias dotfiles="bash /Users/vance/Repos/Codebase/dotfiles/src/dotfiles.sh"
+
+# phpbrew, commented because of it slow down shell
+# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/vance/.sdkman"
+[[ -s "/Users/vance/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/vance/.sdkman/bin/sdkman-init.sh"
