@@ -159,9 +159,10 @@ alias gs="git status"
 alias gb="git branch -a"
 alias gpr="git pull --rebase"
 alias gca="git commit --amend"
+alias gw="git switch"
 
 # My Git Pusher
-alias pusher="zsh /Users/vance/Repos/Codebase/pusher/app.zsh"
+# alias pusher="/Users/vance/Repos/Codebase/pusher/app.zsh"
 
 # MAMP MySQL
 alias mamp-mysql="/Applications/MAMP/Library/bin/mysql -u root -p"
@@ -174,5 +175,5 @@ alias dotfiles="bash /Users/vance/Repos/Codebase/dotfiles/src/dotfiles.sh"
 # [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/vance/.sdkman"
-[[ -s "/Users/vance/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/vance/.sdkman/bin/sdkman-init.sh"
+# export SDKMAN_DIR="/Users/vance/.sdkman"
+# [[ -s "/Users/vance/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/vance/.sdkman/bin/sdkman-init.sh"
