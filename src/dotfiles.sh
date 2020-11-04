@@ -7,7 +7,12 @@ DOTFILES_DIR=${PWD%/*}/dotfiles/macos
 source $PWD/update.sh
 if [[ $1 == "push" && $2 == "--all" ]]; then
   echo ---
-  echo "update dotfiles..."
+  echo "update dotfiles...[multi repo]"
+  echo ---
+  update $HOME $DOTFILES_DIR $MODE
+elif [[ $1 == "push"  ]]; then
+  echo ---
+  echo "update dotfiles...[single repo]"
   echo ---
   update $HOME $DOTFILES_DIR
 else
