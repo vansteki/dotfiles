@@ -9,7 +9,7 @@ if [[ $1 == "push" && $2 == "--all" ]]; then
   echo ---
   echo "update dotfiles...[multi repo]"
   echo ---
-  update $HOME $DOTFILES_DIR $MODE
+  update $HOME $DOTFILES_DIR --all
 elif [[ $1 == "push"  ]]; then
   echo ---
   echo "update dotfiles...[single repo]"
