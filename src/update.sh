@@ -25,7 +25,7 @@ function update() {
   done
 
   echo ---
-  echo mode: $mode
+  echo mode: $3 $4
   if [[ $mode != "--dry-run" ]]; then
     if [[ $mode == "--all" ]]; then
       echo push to all remote repos
