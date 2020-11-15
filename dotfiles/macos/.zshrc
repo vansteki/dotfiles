@@ -160,6 +160,7 @@ alias gb="git branch -a"
 alias gpr="git pull --rebase"
 alias gca="git commit --amend"
 alias gw="git switch"
+alias gpl="git pull"
 
 # My Git Pusher
 # alias pusher="/Users/vance/Repos/Codebase/pusher/app.zsh"
