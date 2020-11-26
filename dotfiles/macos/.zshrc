@@ -151,6 +151,7 @@ alias vihost='vim /etc/hosts'
 alias vrc='vim ~/.zshrc'
 alias src='source ~/.zshrc'
 alias nrd="npm run dev"
+alias tf="terraform"
 
 # GIT
 alias gl="git log"
