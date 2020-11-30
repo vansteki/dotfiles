@@ -153,6 +153,14 @@ alias src='source ~/.zshrc'
 alias nrd="npm run dev"
 alias tf="terraform"
 
+#
+# Tmux
+#
+
+# will  overwrite oh-my-zsh/plugins/tmux/tmux.plugins.zsh
+alias ta='tmux attach'
+alias tt='tmux attach -t '
+
 # GIT
 alias gl="git log"
 alias gv="git remote -v"
