@@ -72,7 +72,7 @@ export ZSH="/Users/vance/.oh-my-zsh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git kubectl nvm docker docker-compose tmux)
+# plugins=(git kubectl tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -118,27 +118,19 @@ source ~/Repos/Github/powerlevel10k/powerlevel10k.zsh-theme
 # iTerm2
 # ----------
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# Nodejs
-
-export PATH="/usr/local/opt/node@12/bin:$PATH"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Android adb
 export PATH=/Users/$USER/Library/Android/sdk/platform-tools:$PATH
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  i
-# This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && 
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ]
 
-
-# This loads nvm bash_completion
-#. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  
 
 # Flutter
-export PATH="$PATH:/Users/vance/Repos/Github/flutter/bin"
+# export PATH="$PATH:/Users/vance/Repos/Github/flutter/bin"
 
 # 
 # My Alias
@@ -170,9 +162,10 @@ alias gpr="git pull --rebase"
 alias gca="git commit --amend"
 alias gw="git switch"
 alias gpl="git pull"
+alias gpa="git remote | xargs -L1 git push"
 
 # My Git Pusher
-# alias pusher="/Users/vance/Repos/Codebase/pusher/app.zsh"
+alias pusher="/Users/vance/Repos/Codebase/pusher/app.zsh"
 
 # MAMP MySQL
 alias mamp-mysql="/Applications/MAMP/Library/bin/mysql -u root -p"
