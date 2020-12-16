@@ -174,9 +174,6 @@ alias mamp-php="/Applications/MAMP/bin/php/php7.3.9/bin"
 # My dotfiles helper
 alias dotfiles="bash /Users/vance/Repos/Codebase/dotfiles/src/dotfiles.sh"
 
-# phpbrew, commented because of it slow down shell
-# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-# export SDKMAN_DIR="/Users/vance/.sdkman"
-# [[ -s "/Users/vance/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/vance/.sdkman/bin/sdkman-init.sh"
+ export SDKMAN_DIR="/Users/vance/.sdkman"
+ [[ -s "/Users/vance/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/vance/.sdkman/bin/sdkman-init.sh"
