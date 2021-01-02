@@ -72,7 +72,7 @@ export ZSH="/Users/vance/.oh-my-zsh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# plugins=(git kubectl tmux)
+ plugins=(git tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -173,6 +173,9 @@ alias mamp-php="/Applications/MAMP/bin/php/php7.3.9/bin"
 
 # My dotfiles helper
 alias dotfiles="bash /Users/vance/Repos/Codebase/dotfiles/src/dotfiles.sh"
+
+# Cow
+ANSIBLE_COW_SELECTION=random
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
  export SDKMAN_DIR="/Users/vance/.sdkman"
