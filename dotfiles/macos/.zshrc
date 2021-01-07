@@ -169,7 +169,7 @@ alias pusher="/Users/vance/Repos/Codebase/pusher/app.zsh"
 
 # MAMP MySQL
 alias mamp-mysql="/Applications/MAMP/Library/bin/mysql -u root -p"
-alias mamp-php="/Applications/MAMP/bin/php/php7.3.9/bin"
+alias mamp-php="/Applications/MAMP/bin/php/php7.1.33/bin/php"
 
 # My dotfiles helper
 alias dotfiles="bash /Users/vance/Repos/Codebase/dotfiles/src/dotfiles.sh"
