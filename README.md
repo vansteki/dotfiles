@@ -1,7 +1,7 @@
 # Vansteki's dotfiles
 ---
 
-My dotfiles and automation for deadbeats
+My dotfiles and automation for deadbeats.🍤
 
 # Requirements
 
