@@ -12,7 +12,9 @@ function setup() {
     echo alias dotfiles=\"bash $(pwd)/src/dotfiles.sh\" >>~/.zshrc
   fi
 
-  echo "usage: use 'dotfiles update' to update your dotfiles"
+  echo "usage: try 'dotfiles' to see update your dotfiles in dry-run mode."
+  echo "usage: use 'dotfiles push' to push your dotfiles to remote."
+  echo "usage: use 'dotfiles push --all' to push your dotfiles to all remotes."
 }
 
 setup
