@@ -177,6 +177,12 @@ alias dotfiles="bash /Users/vance/Repos/Codebase/dotfiles/src/dotfiles.sh"
 # Cow
 ANSIBLE_COW_SELECTION=random
 
+# Browsers
+#alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+#alias chrome-canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary"
+#alias chromium="/Applications/Chromium.app/Contents/MacOS/Chromium"
+
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
  export SDKMAN_DIR="/Users/vance/.sdkman"
  [[ -s "/Users/vance/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/vance/.sdkman/bin/sdkman-init.sh"
