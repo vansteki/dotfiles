@@ -182,6 +182,8 @@ ANSIBLE_COW_SELECTION=random
 #alias chrome-canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary"
 #alias chromium="/Applications/Chromium.app/Contents/MacOS/Chromium"
 
+# Brew links
+export PATH=/usr/local/sbin:$PATH
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
  export SDKMAN_DIR="/Users/vance/.sdkman"
