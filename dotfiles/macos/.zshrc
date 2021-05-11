@@ -185,6 +185,9 @@ ANSIBLE_COW_SELECTION=random
 # Brew links
 export PATH=/usr/local/sbin:$PATH
 
+# yt folder
+alias yt="cd '/Users/vance/Google Drive/My Drive/yt'"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
  export SDKMAN_DIR="/Users/vance/.sdkman"
  [[ -s "/Users/vance/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/vance/.sdkman/bin/sdkman-init.sh"
