@@ -31,3 +31,4 @@ filetype plugin indent on    " required
 " Personal Config
 :set incsearch
 :set hlsearch
+:set number
