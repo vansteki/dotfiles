@@ -1,4 +1,4 @@
-#!/usr/bin/.env bash
+#!/bin/zsh
 
 function deploy() {
   local src=$1

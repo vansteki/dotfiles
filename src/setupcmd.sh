@@ -1,4 +1,4 @@
-#!/usr/bin/.env bash
+#!/bin/zsh
 
 function setup() {
   echo 'setup...'
