@@ -4,7 +4,7 @@ function setup() {
   echo 'setup...'
   result=$(cat ~/.zshrc | grep -c dotfiles.sh)
 
-  if [[ $result -ge 0 ]]; then
+  if [[ $result -gt 0 ]]; then
     echo 'dotfiles alias in ~/.zshrc founded:'
     cat ~/.zshrc | grep dotfiles.sh
   else
