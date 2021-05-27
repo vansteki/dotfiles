@@ -157,6 +157,7 @@ alias gca="git commit --amend"
 alias gw="git switch"
 alias gpl="git pull"
 alias gpa="git remote | xargs -L1 git push"
+alias gr="/Users/$USER/.nvm/versions/node/$(node -v)/bin/gr"
 
 # My Git Pusher
 alias pusher="/Users/vance/Repos/Codebase/pusher/app.zsh"
