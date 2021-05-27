@@ -9,7 +9,7 @@ function setup() {
     cat ~/.zshrc | grep dotfiles.sh
   else
     printf "\n# My dotfiles helper\n" >>~/.zshrc
-    echo alias dotfiles=\"bash $(pwd)/src/dotfiles.sh\" >>~/.zshrc
+    echo alias dotfiles=\"bash $(pwd)/src/dotfiles.sh\" >>~/.zshenv
   fi
 
   echo "usage: try 'dotfiles' to see update your dotfiles in dry-run mode."
