@@ -2,11 +2,11 @@
 
 function setup() {
   echo 'setup...'
-  result=$(cat ~/.zshrc | grep -c dotfiles.sh)
+  result=$(cat ~/.zshenv | grep -c dotfiles.sh)
 
   if [[ $result -gt 0 ]]; then
     echo 'dotfiles alias in ~/.zshrc founded:'
-    cat ~/.zshrc | grep dotfiles.sh
+    cat ~/.zshenv | grep dotfiles.sh
   else
     printf "\n# My dotfiles helper\n" >>~/.zshenv
     echo alias dotfiles=\"bash $(pwd)/src/dotfiles.sh\" >>~/.zshenv
