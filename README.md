@@ -13,7 +13,7 @@ My dotfiles and automation for deadbeats.🍤
 
 2. Install this helper tool.
     ```
-    npm run setup
+    npm i
     ```
 
 3. Every time when you modified any dotfiles in your user home folder, just use `dotfiles save` command to update your dotfiles to remote repository. 
