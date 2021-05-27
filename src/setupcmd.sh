@@ -8,7 +8,7 @@ function setup() {
     echo 'dotfiles alias in ~/.zshrc founded:'
     cat ~/.zshrc | grep dotfiles.sh
   else
-    printf "\n# My dotfiles helper\n" >>~/.zshrc
+    printf "\n# My dotfiles helper\n" >>~/.zshenv
     echo alias dotfiles=\"bash $(pwd)/src/dotfiles.sh\" >>~/.zshenv
   fi
 
