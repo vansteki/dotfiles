@@ -39,6 +39,6 @@ My dotfiles and automation for deadbeats.🍤
 Add new dotfiles in user home folder and this repo's dotfiles folder. Then `dotfile push`.
 
 ```
-touch ~/.testfile dotfiles/macos/.testfile
+touch ~/.testfile ./dotfiles/macos/.testfile
 dotfiles push
 ```
