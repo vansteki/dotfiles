@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 
 # use "dirname $0" to get origin dir of symbolic file
 PWD=$(dirname $0)
