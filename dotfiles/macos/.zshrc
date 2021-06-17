@@ -132,7 +132,7 @@ export PATH=/Users/$USER/Library/Android/sdk/platform-tools:$PATH
 
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias zshconfig="vim ~/.zshrc"
-alias l='ls -alh'
+alias l='ls -halt'
 alias vh='vim /etc/hosts'
 alias vrc='vim ~/.zshrc'
 alias src='source ~/.zshrc'

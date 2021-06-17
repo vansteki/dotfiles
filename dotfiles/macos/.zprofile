@@ -1,3 +1,4 @@
+source ~/.profile
 # Usage:
 #   `git-pull-all` to pull all your local branches from origin
 #   `git-pull-all remote` to pull all your local branches from a named remote
