@@ -160,6 +160,13 @@ alias gw="git switch"
 alias gpl="git pull"
 alias gpa="git remote | xargs -L1 git push"
 
+# Kubectl
+alias k='kubectl'
+alias kg='kubectl get'
+alias kc='kubectl create'
+alias kd='kubectl delete'
+alias ko='kubectl get nodes -o wide'
+
 # My Git Pusher
 alias pusher="$HOME/Repos/Codebase/pusher/app.zsh"
 
