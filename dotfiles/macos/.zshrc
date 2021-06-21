@@ -166,6 +166,9 @@ alias kg='kubectl get'
 alias kc='kubectl create'
 alias kd='kubectl delete'
 alias ko='kubectl get nodes -o wide'
+alias kf='kubectl config'
+alias kfv='kubectl config view'
+
 
 # My Git Pusher
 alias pusher="$HOME/Repos/Codebase/pusher/app.zsh"
