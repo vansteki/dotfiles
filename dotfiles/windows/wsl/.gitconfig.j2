@@ -1,0 +1,14 @@
+[user]
+	name = vansteki
+	email = vansteki.tw@gmail.com
+[pager]
+	branch = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pull]
+	rebase = false
+[core]
+	autocrlf = input
