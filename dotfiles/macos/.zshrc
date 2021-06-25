@@ -170,6 +170,7 @@ alias kf='kubectl config'
 alias kfv='kubectl config view'
 alias kds='kubectl describe'
 alias kp='kubectl explain'
+alias kpo='kubectl get pods -o wide'
 
 # My Git Pusher
 alias pusher="$HOME/Repos/Codebase/pusher/app.zsh"
@@ -198,6 +199,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 alias gr="/Users/$USER/.nvm/versions/node/$(nvm_version)/bin/gr"
+
+# Python package
+export PATH=$PATH:/Users/$USER/Library/Python/3.9/bin
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
  export SDKMAN_DIR="/Users/$USER/.sdkman"
