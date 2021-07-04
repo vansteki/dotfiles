@@ -174,8 +174,8 @@ alias kds='kubectl describe'
 alias kx='kubectl explain'
 alias kpo='kubectl get pods -o wide'
 alias kp='kubectl get pods'
-alias ky='kubectl get deploy'
-alias kyo='kubectl get deploy -o wide'
+alias ky='kubectl get deployment'
+alias kyo='kubectl get deployment -o wide'
 
 
 # My Git Pusher
