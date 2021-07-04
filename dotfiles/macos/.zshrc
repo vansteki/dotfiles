@@ -176,7 +176,8 @@ alias kpo='kubectl get pods -o wide'
 alias kp='kubectl get pods'
 alias ky='kubectl get deployment'
 alias kyo='kubectl get deployment -o wide'
-
+alias ka='kubectl get all'
+alias kao='kubectl get all -o wide'
 
 # My Git Pusher
 alias pusher="$HOME/Repos/Codebase/pusher/app.zsh"
