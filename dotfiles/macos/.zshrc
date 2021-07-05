@@ -72,7 +72,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
- plugins=(git tmux)
+ plugins=(git tmux kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -174,10 +174,13 @@ alias kds='kubectl describe'
 alias kx='kubectl explain'
 alias kpo='kubectl get pods -o wide'
 alias kp='kubectl get pods'
-alias ky='kubectl get deployment'
+# conflict with zsh kubectl plugins
+# alias ky='kubectl get deployment'
 alias kyo='kubectl get deployment -o wide'
 alias ka='kubectl get all'
 alias kao='kubectl get all -o wide'
+alias kr='kubectl rollout'
+
 
 # My Git Pusher
 alias pusher="$HOME/Repos/Codebase/pusher/app.zsh"
