@@ -180,6 +180,8 @@ alias kyo='kubectl get deployment -o wide'
 alias ka='kubectl get all'
 alias kao='kubectl get all -o wide'
 alias kr='kubectl rollout'
+alias kv='kubectl get service'
+alias kvo='kubectl get service -o wide'
 
 
 # My Git Pusher
