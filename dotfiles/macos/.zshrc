@@ -191,8 +191,9 @@ alias pusher="$HOME/Repos/Codebase/pusher/app.zsh"
 alias mamp-mysql="/Applications/MAMP/Library/bin/mysql -u root -p"
 alias mamp-php="/Applications/MAMP/bin/php/php7.1.33/bin/php"
 
-# Cow
+# Ansible
 ANSIBLE_COW_SELECTION=random
+export ANSIBLE_CALLBACK_PLUGINS="$(python3 -m ara.setup.callback_plugins)"
 
 # Browsers
 #alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
