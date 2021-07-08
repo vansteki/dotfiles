@@ -216,7 +216,5 @@ alias gr="/Users/$USER/.nvm/versions/node/$(nvm_version)/bin/gr"
 # Python package
 export PATH=$PATH:/Users/$USER/Library/Python/3.9/bin
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
- export SDKMAN_DIR="/Users/$USER/.sdkman"
- [[ -s "/Users/USER/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/$USER/.sdkman/bin/sdkman-init.sh"
-
+# sdkman
+[[ -f ~/.sdkman/bin/sdkman-init.sh ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
